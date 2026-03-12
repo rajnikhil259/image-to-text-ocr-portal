@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multilingual OCR Portal</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Multilingual OCR Portal (Punjabi)</h2>
+
+    <!-- Assignment Constraints -->
+    <div class="note">
+      <b>OCR Input Requirements:</b>
+      <ul>
+        <li>Language: <b>Punjabi (Gurmukhi)</b></li>
+        <li>Minimum 20 lines of text</li>
+        <li>Font size: <b>11</b></li>
+        <li>At least <b>5 different fonts</b></li>
+      </ul>
+    </div>
+
+    <!-- Image Upload -->
+    <label><b>Select Punjabi Text Image:</b></label>
+    <input type="file" id="imageInput" accept="image/*" />
+
+    <!-- Image Preview (Feature 2) -->
+    <img id="imagePreview" class="preview" style="display:none;" />
+
+    <!-- Font Selection -->
+    <label><b>Select Display Font:</b></label>
+    <select id="fontSelector" onchange="changeFont()">
+      <option value="GurbaniAkhar">GurbaniAkhar</option>
+      <option value="Raavi">Raavi</option>
+      <option value="Nirmala UI">Nirmala UI</option>
+      <option value="Kokila">Kokila</option>
+      <option value="Arial">Arial</option>
+    </select>
+
+    <!-- Buttons -->
+    <button id="convertBtn">Convert Image to Text</button>
+    <button onclick="downloadDocx()">Download as DOCX</button>
+
+    <!-- OCR Output -->
+    <label><b>Extracted Punjabi Text:</b></label>
+    <textarea id="outputText" placeholder="ਇੱਥੇ OCR ਨਤੀਜਾ ਵਿਖਾਏਾਯੇਗਾ..."></textarea>
+
+    <button id="spellCheckBtn">Check Spelling</button>
+
+    <div id="spellResultContainer">
+      <h3>Spell Check Results</h3>
+      <table id="resultTable">
+        <tr>
+          <th>Word</th>
+          <th>Hamming</th>
+          <th>LCS</th>
+          <th>Levenshtein</th>
+          <th>Jaro</th>
+          <th>Composite</th>
+          <th>Benchmark</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Text Statistics (Feature 3) -->
+    <div class="stats" id="textStats">
+      <b>Text Statistics:</b>
+      <p>Words: 0</p>
+      <p>Lines: 0</p>
+      <p>Characters: 0</p>
+      <p>Average Word Length: 0</p>
+    </div>
+  </div>
+
+  <!-- Embedded Script -->
+  <script src="./script.js">
+   
+  </script>
+
+</body>
+</html>
